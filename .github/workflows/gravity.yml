@@ -1,0 +1,27 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - master
+  pull_request: {}
+
+jobs:
+  gravity:
+    name: Gravity
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Node.js
+        uses: actions/setup-node@v4
+        with:
+          registry-url: "https://registry.npmjs.org"
+      - name: install dependencies
+        run: npm ci
+      - name: List files
+        run: ls -la
+      - name: Run Gravity
+        run: npm run gravityci 'index.js' './dist/**/*' './lib/**/*'
+        env:
+          GRAVITY_TOKEN: ${{ secrets.GRAVITY_TOKEN }}
