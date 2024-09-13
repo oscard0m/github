@@ -19,7 +19,9 @@ jobs:
           registry-url: "https://registry.npmjs.org"
       - name: install dependencies
         run: npm ci
+      - name: List files
+        run: ls -la
       - name: Run Gravity
-        run: npm run gravityci "./lib/**/*" "index.js"
+        run: npm run gravityci './lib/**/*'' 'index.js'
         env:
           GRAVITY_TOKEN: ${{ secrets.GRAVITY_TOKEN }}
