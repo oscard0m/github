@@ -19,6 +19,8 @@ jobs:
           registry-url: "https://registry.npmjs.org"
       - name: install dependencies
         run: npm ci
+      - name: build project
+        run: npm run build
       - name: List files
         run: ls -la
       - name: Run Gravity
