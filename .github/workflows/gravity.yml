@@ -22,6 +22,6 @@ jobs:
       - name: List files
         run: ls -la
       - name: Run Gravity
-        run: npm run gravityci './lib/**/*'' 'index.js'
+        run: npm run gravityci './lib/**/*'' 'index.js' './dist/**/*'
         env:
           GRAVITY_TOKEN: ${{ secrets.GRAVITY_TOKEN }}

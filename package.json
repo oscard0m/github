@@ -45,6 +45,7 @@
     "c8": "10.1.2",
     "cpy": "11.1.0",
     "cz-conventional-changelog": "3.3.0",
+    "esbuild": "^0.23.1",
     "fetch-mock": "npm:@gr2m/fetch-mock@9.11.0-pull-request-644.1",
     "lockfile-lint": "4.14.0",
     "ls-engines": "0.9.3",
@@ -113,6 +114,7 @@
     "url": "https://github.com/semantic-release/github.git"
   },
   "scripts": {
+    "build": "esbuild './index.js' --bundle --outfile='./dist/index.js' --platform=node",
     "codecov": "codecov -f coverage/coverage-final.json",
     "lint:prettier": "prettier --check \"{lib,test}/**/*.{js,json,ts}\" \"*.{js,md,json}\" \".github/**/*.yml\"",
     "lint:prettier:fix": "prettier --write \"{lib,test}/**/*.{js,json,ts}\" \"*.{js,md,json}\" \".github/**/*.yml\"",
